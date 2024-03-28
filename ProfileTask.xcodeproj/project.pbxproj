@@ -17,6 +17,9 @@
 		E47D5EF82BB5A24D00778085 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EF72BB5A24D00778085 /* NetworkService.swift */; };
 		E47D5EFA2BB5A25900778085 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EF92BB5A25900778085 /* NetworkError.swift */; };
 		E47D5EFD2BB5A2C800778085 /* ServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EFC2BB5A2C800778085 /* ServicesModel.swift */; };
+		E47D5F012BB5AC9600778085 /* CollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F002BB5AC9600778085 /* CollectionViewAdapter.swift */; };
+		E47D5F042BB5ACC500778085 /* MainCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F032BB5ACC500778085 /* MainCollectionViewCellModel.swift */; };
+		E47D5F072BB5AD5400778085 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F062BB5AD5400778085 /* MainCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		E47D5EF72BB5A24D00778085 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E47D5EF92BB5A25900778085 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E47D5EFC2BB5A2C800778085 /* ServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesModel.swift; sourceTree = "<group>"; };
+		E47D5F002BB5AC9600778085 /* CollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAdapter.swift; sourceTree = "<group>"; };
+		E47D5F032BB5ACC500778085 /* MainCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCellModel.swift; sourceTree = "<group>"; };
+		E47D5F062BB5AD5400778085 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,10 @@
 		E47D5EED2BB59F1A00778085 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E47D5EDC2BB59D3E00778085 /* MainViewController.swift */,
+				E47D5F022BB5AC9B00778085 /* Adapter */,
+				E47D5F052BB5ACC700778085 /* CollectionModel */,
+				E47D5F082BB5AD5900778085 /* CollectionViewCell */,
+				E47D5EFF2BB5AC6900778085 /* ViewController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +142,38 @@
 				E47D5EFC2BB5A2C800778085 /* ServicesModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E47D5EFF2BB5AC6900778085 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5EDC2BB59D3E00778085 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E47D5F022BB5AC9B00778085 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5F002BB5AC9600778085 /* CollectionViewAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		E47D5F052BB5ACC700778085 /* CollectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5F032BB5ACC500778085 /* MainCollectionViewCellModel.swift */,
+			);
+			path = CollectionModel;
+			sourceTree = "<group>";
+		};
+		E47D5F082BB5AD5900778085 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5F062BB5AD5400778085 /* MainCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +249,11 @@
 				E47D5EF52BB59FD000778085 /* MainViewModel.swift in Sources */,
 				E47D5EDD2BB59D3E00778085 /* MainViewController.swift in Sources */,
 				E47D5ED92BB59D3E00778085 /* AppDelegate.swift in Sources */,
+				E47D5F042BB5ACC500778085 /* MainCollectionViewCellModel.swift in Sources */,
+				E47D5F012BB5AC9600778085 /* CollectionViewAdapter.swift in Sources */,
 				E47D5EFD2BB5A2C800778085 /* ServicesModel.swift in Sources */,
 				E47D5EFA2BB5A25900778085 /* NetworkError.swift in Sources */,
+				E47D5F072BB5AD5400778085 /* MainCollectionViewCell.swift in Sources */,
 				E47D5EF02BB59F6D00778085 /* CoordinatorProtocol.swift in Sources */,
 				E47D5EF82BB5A24D00778085 /* NetworkService.swift in Sources */,
 				E47D5EF22BB59F9200778085 /* AppCooedinator.swift in Sources */,
