@@ -49,8 +49,11 @@ class MainViewController: UIViewController {
     private func bindViewModel() {
         viewModel?.getServices()
         
-        viewModel?.onDataReload = { [weak self] data in
-            self?.adapter.reload(data)
+        viewModel?.onDataReload = { [weak self] data, maxLimit in
+            self?.adapter.reload(data, maxLimit)
+        }
+        adapter.onPageData = { [weak self] limit in
+            self?.viewModel?.paginationData(limit: limit)
         }
     }
 

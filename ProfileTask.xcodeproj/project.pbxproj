@@ -20,6 +20,7 @@
 		E47D5F012BB5AC9600778085 /* CollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F002BB5AC9600778085 /* CollectionViewAdapter.swift */; };
 		E47D5F042BB5ACC500778085 /* MainCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F032BB5ACC500778085 /* MainCollectionViewCellModel.swift */; };
 		E47D5F072BB5AD5400778085 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F062BB5AD5400778085 /* MainCollectionViewCell.swift */; };
+		E47D5F0A2BB5D37500778085 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F092BB5D37500778085 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E47D5F002BB5AC9600778085 /* CollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAdapter.swift; sourceTree = "<group>"; };
 		E47D5F032BB5ACC500778085 /* MainCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCellModel.swift; sourceTree = "<group>"; };
 		E47D5F062BB5AD5400778085 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		E47D5F092BB5D37500778085 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			children = (
 				E47D5EEE2BB59F3A00778085 /* Application */,
 				E47D5EF32BB59FB600778085 /* Coordinator */,
+				E47D5F0B2BB5D38500778085 /* Extensions */,
 				E47D5EEC2BB59ECF00778085 /* SupportingFilles */,
 				E47D5EFE2BB5A2DC00778085 /* Models */,
 				E47D5EFB2BB5A2AE00778085 /* Network */,
@@ -176,6 +179,14 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		E47D5F0B2BB5D38500778085 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5F092BB5D37500778085 /* Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,6 +260,7 @@
 				E47D5EF52BB59FD000778085 /* MainViewModel.swift in Sources */,
 				E47D5EDD2BB59D3E00778085 /* MainViewController.swift in Sources */,
 				E47D5ED92BB59D3E00778085 /* AppDelegate.swift in Sources */,
+				E47D5F0A2BB5D37500778085 /* Extension.swift in Sources */,
 				E47D5F042BB5ACC500778085 /* MainCollectionViewCellModel.swift in Sources */,
 				E47D5F012BB5AC9600778085 /* CollectionViewAdapter.swift in Sources */,
 				E47D5EFD2BB5A2C800778085 /* ServicesModel.swift in Sources */,

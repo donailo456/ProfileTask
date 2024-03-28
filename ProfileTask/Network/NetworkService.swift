@@ -41,6 +41,16 @@ final class NetworkService {
         } .resume()
     }
     
+    func downloadImage(from url: URL, completion: @escaping (Data) -> Void) {
+        getDataImage(from: url) { [weak self] data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() { [weak self] in
+                guard self != nil else { return }
+                completion(data)
+            }
+        }
+    }
+    
     // MARK: - Private Methods
     
     private func getURL(_ path: String) -> URL {
@@ -54,5 +64,9 @@ final class NetworkService {
         }
         debugPrint(url)
         return url
+    }
+    
+    private func getDataImage(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        session.dataTask(with: url, completionHandler: completion).resume()
     }
 }

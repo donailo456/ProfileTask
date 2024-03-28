@@ -26,12 +26,18 @@ final class CollectionViewAdapter: NSObject {
     typealias DataSource = UICollectionViewDiffableDataSource<Section, MainCollectionViewCellModel>
     typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, MainCollectionViewCellModel>
     
+    // MARK: - Internal properties
+    
+    var onPageData: ((Int) -> Void)?
+    
     // MARK: - Private properties
     
     private weak var collectionView: UICollectionView?
     private var dataSource: DataSource?
     private var snapshot = DataSourceSnapshot()
     private var cellDataSource: [MainCollectionViewCellModel]?
+    private var limit = 0
+    private var maxLimit: Int?
     
     init(collectionView: UICollectionView) {
         super.init()
@@ -41,8 +47,9 @@ final class CollectionViewAdapter: NSObject {
     
     // MARK: - Internal Methods
     
-    func reload(_ data: [MainCollectionViewCellModel]?) {
+    func reload(_ data: [MainCollectionViewCellModel]?, _ maxLimit: Int?) {
         guard let data = data else { return }
+        self.maxLimit = maxLimit
         cellDataSource = data
         configureCollectionViewDataSource()
         applySnapshot(services: data)
@@ -78,11 +85,30 @@ extension CollectionViewAdapter {
             return cell
         })
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let screenHeight = scrollView.frame.size.height
+        if offsetY > contentHeight - screenHeight {
+            if limit < maxLimit ?? 0 {
+                limit += 1
+                onPageData?(limit)
+            }
+        }
+    }
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
 
 extension CollectionViewAdapter: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? MainCollectionViewCell,
+           let urlString = cell.urlString,
+           let url = URL(string: urlString) {
+            UIApplication.shared.open(url)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.bounds.width - 32, height: collectionView.bounds.height / 7)
