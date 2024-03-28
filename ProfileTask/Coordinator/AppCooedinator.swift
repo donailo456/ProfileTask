@@ -18,7 +18,6 @@ final class AppCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        debugPrint("App Coordinator start")
         showMainVC()
     }
     

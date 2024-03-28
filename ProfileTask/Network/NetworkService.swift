@@ -19,6 +19,7 @@ final class NetworkService {
     
     private let decoder = JSONDecoder()
     private let session = URLSession.shared
+    private let cache = NSCache<NSString, NSData>()
     
     // MARK: - Internal Methods
     
@@ -42,8 +43,16 @@ final class NetworkService {
     }
     
     func downloadImage(from url: URL, completion: @escaping (Data) -> Void) {
+        if let cachedData = cache.object(forKey: url.absoluteString as NSString) {
+            completion(cachedData as Data)
+            return
+        }
+        
         getDataImage(from: url) { [weak self] data, response, error in
             guard let data = data, error == nil else { return }
+            
+            self?.cache.setObject(data as NSData, forKey: url.absoluteString as NSString)
+            
             DispatchQueue.main.async() { [weak self] in
                 guard self != nil else { return }
                 completion(data)

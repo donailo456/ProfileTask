@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewModel: NSObject {
+final class MainViewModel: NSObject, MainViewModelProtocol {
     
     // MARK: - Constants
     
@@ -20,6 +20,7 @@ final class MainViewModel: NSObject {
     weak var coordinator: AppCoordinator?
     
     var onDataReload: (([MainCollectionViewCellModel]?, Int?) -> Void)?
+    var onIsLoading: ((Bool)-> Void)?
     
     // MARK: - Private properties
     
@@ -35,6 +36,7 @@ final class MainViewModel: NSObject {
     // MARK: - Internal Methods
     
     func getServices() {
+        onIsLoading?(true)
         networkService?.getServices { [weak self] result in
             guard let self else { return }
             DispatchQueue.main.async {
@@ -43,6 +45,7 @@ final class MainViewModel: NSObject {
                     self.dataSource = service
                     self.mapCellData()
                     self.paginationData(limit: 0)
+                    self.onIsLoading?(false)
                 case .failure(let error):
                     debugPrint(error)
                 }

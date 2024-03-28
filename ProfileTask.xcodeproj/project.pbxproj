@@ -21,6 +21,7 @@
 		E47D5F042BB5ACC500778085 /* MainCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F032BB5ACC500778085 /* MainCollectionViewCellModel.swift */; };
 		E47D5F072BB5AD5400778085 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F062BB5AD5400778085 /* MainCollectionViewCell.swift */; };
 		E47D5F0A2BB5D37500778085 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F092BB5D37500778085 /* Extension.swift */; };
+		E47D5F0D2BB5D7D400778085 /* MainViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F0C2BB5D7D400778085 /* MainViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E47D5F032BB5ACC500778085 /* MainCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCellModel.swift; sourceTree = "<group>"; };
 		E47D5F062BB5AD5400778085 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		E47D5F092BB5D37500778085 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		E47D5F0C2BB5D7D400778085 /* MainViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				E47D5EF42BB59FD000778085 /* MainViewModel.swift */,
+				E47D5F0C2BB5D7D400778085 /* MainViewModelProtocol.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				E47D5EDD2BB59D3E00778085 /* MainViewController.swift in Sources */,
 				E47D5ED92BB59D3E00778085 /* AppDelegate.swift in Sources */,
 				E47D5F0A2BB5D37500778085 /* Extension.swift in Sources */,
+				E47D5F0D2BB5D7D400778085 /* MainViewModelProtocol.swift in Sources */,
 				E47D5F042BB5ACC500778085 /* MainCollectionViewCellModel.swift in Sources */,
 				E47D5F012BB5AC9600778085 /* CollectionViewAdapter.swift in Sources */,
 				E47D5EFD2BB5A2C800778085 /* ServicesModel.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     // MARK: - Internal properties
     
@@ -22,6 +22,14 @@ class MainViewController: UIViewController {
         return collection
     }()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.style = .medium
+        indicator.color = .white
+        return indicator
+    }()
+    
     private lazy var adapter = CollectionViewAdapter(collectionView: mainCollectionView)
 
     override func viewDidLoad() {
@@ -33,7 +41,9 @@ class MainViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupViews() {
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "141414")
         view.addSubview(mainCollectionView)
+        view.addSubview(activityIndicator)
         setupConstraints()
     }
     
@@ -43,10 +53,17 @@ class MainViewController: UIViewController {
             mainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
     
     private func bindViewModel() {
+        viewModel?.onIsLoading = { [weak self] isLoading in
+            isLoading ? self?.activityIndicator.startAnimating() : self?.activityIndicator.stopAnimating()
+        }
+        
         viewModel?.getServices()
         
         viewModel?.onDataReload = { [weak self] data, maxLimit in
@@ -56,6 +73,5 @@ class MainViewController: UIViewController {
             self?.viewModel?.paginationData(limit: limit)
         }
     }
-
 }
 

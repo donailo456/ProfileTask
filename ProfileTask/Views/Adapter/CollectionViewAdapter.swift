@@ -61,7 +61,7 @@ final class CollectionViewAdapter: NSObject {
     // MARK: - Private Methods
     
     private func setupCollectionView() {
-        self.collectionView?.backgroundColor = .blue
+        self.collectionView?.backgroundColor = UIColor.hexStringToUIColor(hex: "141414")
         self.collectionView?.delegate = self
         self.collectionView?.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
     }
