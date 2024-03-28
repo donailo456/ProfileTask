@@ -14,6 +14,9 @@
 		E47D5EF02BB59F6D00778085 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EEF2BB59F6D00778085 /* CoordinatorProtocol.swift */; };
 		E47D5EF22BB59F9200778085 /* AppCooedinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EF12BB59F9200778085 /* AppCooedinator.swift */; };
 		E47D5EF52BB59FD000778085 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EF42BB59FD000778085 /* MainViewModel.swift */; };
+		E47D5EF82BB5A24D00778085 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EF72BB5A24D00778085 /* NetworkService.swift */; };
+		E47D5EFA2BB5A25900778085 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EF92BB5A25900778085 /* NetworkError.swift */; };
+		E47D5EFD2BB5A2C800778085 /* ServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5EFC2BB5A2C800778085 /* ServicesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		E47D5EEF2BB59F6D00778085 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E47D5EF12BB59F9200778085 /* AppCooedinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCooedinator.swift; sourceTree = "<group>"; };
 		E47D5EF42BB59FD000778085 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E47D5EF72BB5A24D00778085 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E47D5EF92BB5A25900778085 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E47D5EFC2BB5A2C800778085 /* ServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,11 @@
 			children = (
 				E47D5EEE2BB59F3A00778085 /* Application */,
 				E47D5EF32BB59FB600778085 /* Coordinator */,
-				E47D5EED2BB59F1A00778085 /* Views */,
 				E47D5EEC2BB59ECF00778085 /* SupportingFilles */,
+				E47D5EFE2BB5A2DC00778085 /* Models */,
+				E47D5EFB2BB5A2AE00778085 /* Network */,
 				E47D5EF62BB59FD300778085 /* ViewModels */,
+				E47D5EED2BB59F1A00778085 /* Views */,
 			);
 			path = ProfileTask;
 			sourceTree = "<group>";
@@ -108,6 +116,23 @@
 				E47D5EF42BB59FD000778085 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E47D5EFB2BB5A2AE00778085 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5EF72BB5A24D00778085 /* NetworkService.swift */,
+				E47D5EF92BB5A25900778085 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E47D5EFE2BB5A2DC00778085 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5EFC2BB5A2C800778085 /* ServicesModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +208,10 @@
 				E47D5EF52BB59FD000778085 /* MainViewModel.swift in Sources */,
 				E47D5EDD2BB59D3E00778085 /* MainViewController.swift in Sources */,
 				E47D5ED92BB59D3E00778085 /* AppDelegate.swift in Sources */,
+				E47D5EFD2BB5A2C800778085 /* ServicesModel.swift in Sources */,
+				E47D5EFA2BB5A25900778085 /* NetworkError.swift in Sources */,
 				E47D5EF02BB59F6D00778085 /* CoordinatorProtocol.swift in Sources */,
+				E47D5EF82BB5A24D00778085 /* NetworkService.swift in Sources */,
 				E47D5EF22BB59F9200778085 /* AppCooedinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
