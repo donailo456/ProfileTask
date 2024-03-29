@@ -72,7 +72,7 @@ final class MainCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = UIColor.hexStringToUIColor(hex: "5d5f61")
         contentView.layer.borderColor = UIColor.darkGray.cgColor
         contentView.layer.borderWidth = 3
-        contentView.layer.cornerRadius = 10
+        contentView.layer.cornerRadius = 25
     }
     
     private func setupViews() {
@@ -89,11 +89,11 @@ final class MainCollectionViewCell: UICollectionViewCell {
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             imageView.widthAnchor.constraint(equalToConstant: 76),
             
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            discriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            discriptionLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
+            discriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 2),
             discriptionLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
             discriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
         ])

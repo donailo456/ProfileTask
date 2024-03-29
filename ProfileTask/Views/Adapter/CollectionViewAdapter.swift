@@ -112,7 +112,7 @@ extension CollectionViewAdapter: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width - 32, height: collectionView.bounds.height / 7)
+        CGSize(width: collectionView.bounds.width - 32, height: collectionView.bounds.height / 7.3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
