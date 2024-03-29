@@ -25,9 +25,9 @@
 
 ## Основной стек технологий (в этом репозитории):
 
-- CoreData
-- MapKit
-- CoreLocation
+- UIKit
+- FileManager
+- NSCache
 
 ## Установка
 
