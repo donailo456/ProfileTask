@@ -35,7 +35,7 @@
 ## Установка
 
 ```
-    git clone https://github.com/donailo456/VKWeather.git
+    git clone https://github.com/donailo456/ProfileTask.git
     pod install
     cmd+r в Xcode 
 ```
