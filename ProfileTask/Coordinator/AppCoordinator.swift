@@ -29,6 +29,8 @@ final class AppCoordinator: CoordinatorProtocol {
         mainViewModel.coordinator = self
         
         mainViewController.viewModel = mainViewModel
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.barTintColor = UIColor.hexStringToUIColor(hex: "141414")
         navigationController.pushViewController(mainViewController, animated: true)
     }
     
