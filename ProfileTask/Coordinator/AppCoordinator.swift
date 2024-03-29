@@ -24,7 +24,8 @@ final class AppCoordinator: CoordinatorProtocol {
     private func showMainVC() {
         let mainViewController = MainViewController()
         let networkService = NetworkService()
-        let mainViewModel = MainViewModel.init(networkService: networkService)
+        let fileManager = FilesManager()
+        let mainViewModel = MainViewModel.init(networkService: networkService, filesManager: fileManager)
         mainViewModel.coordinator = self
         
         mainViewController.viewModel = mainViewModel

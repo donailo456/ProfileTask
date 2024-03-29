@@ -28,9 +28,11 @@ final class MainViewModel: NSObject, MainViewModelProtocol {
     private var dataSource: [Service]?
     private var cellDataSource: [MainCollectionViewCellModel]?
     private var limitCellDataSource: [MainCollectionViewCellModel]?
+    private var filesManager: FilesManager?
     
-    init(networkService: NetworkService) {
+    init(networkService: NetworkService, filesManager: FilesManager) {
         self.networkService = networkService
+        self.filesManager = filesManager
     }
     
     // MARK: - Internal Methods
@@ -43,6 +45,7 @@ final class MainViewModel: NSObject, MainViewModelProtocol {
                 switch result {
                 case .success(let service):
                     self.dataSource = service
+                    self.filesManager?.createFile(service)
                     self.mapCellData()
                     self.paginationData(limit: 0)
                     self.onIsLoading?(false)
@@ -96,17 +99,18 @@ final class MainViewModel: NSObject, MainViewModelProtocol {
         group.notify(queue: .main) {
             self.onDataReload?(self.limitCellDataSource ?? [], (self.cellDataSource?.count ?? 0) - Constants.endCell - 1)
         }
-
     }
     
     private func mapCellData() {
-        self.cellDataSource = dataSource?.compactMap({ MainCollectionViewCellModel(
-            name: $0.name,
-            description: $0.description,
-            link: $0.link,
-            iconURL: $0.icon_url,
-            iconData: nil)
-        })
+        filesManager?.readFile { [weak self] result in
+            self?.cellDataSource = result?.map({ MainCollectionViewCellModel(
+                name: $0.name,
+                description: $0.description,
+                link: $0.link,
+                iconURL: $0.icon_url,
+                iconData: nil)
+            })
+        }
         
         limitCellDataSource = cellDataSource?[0...Constants.endCell].compactMap({ MainCollectionViewCellModel(
             name: $0.name,
