@@ -39,4 +39,4 @@
 ```
 
 ## Screencast
-![Pagination](https://s9.gifyu.com/images/SVQPc.gif)  ![touch](https://s9.gifyu.com/images/SVWou.gif)
+![Pagination](https://s9.gifyu.com/images/SVWB6.gif)  ![touch](https://s9.gifyu.com/images/SVWou.gif)
