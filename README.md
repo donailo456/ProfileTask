@@ -1,5 +1,5 @@
 ### Профильное задание для VK
-![Swift Version Shield](https://img.shields.io/badge/Swift%205.9-FA7343?style=flat&logo=swift&logoColor=white)
+![Swift Version Shield](https://img.shields.io/badge/Swift%205.0-FA7343?style=flat&logo=swift&logoColor=white)
 
 ## Содержание <!-- omit in toc -->
 
