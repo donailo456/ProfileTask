@@ -64,6 +64,11 @@ final class MainViewModel: NSObject, MainViewModelProtocol {
         }
     }
     
+    func openWebView(url: URL?) {
+        guard let url = url else { return }
+        coordinator?.startWebVC(url: url)
+    }
+    
     // MARK: - Private Methods
     
     private func downloadDataIcon() {

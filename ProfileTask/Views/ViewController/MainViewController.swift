@@ -31,7 +31,7 @@ final class MainViewController: UIViewController {
     }()
     
     private lazy var adapter = CollectionViewAdapter(collectionView: mainCollectionView)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -71,6 +71,10 @@ final class MainViewController: UIViewController {
         }
         adapter.onPageData = { [weak self] limit in
             self?.viewModel?.paginationData(limit: limit)
+        }
+        
+        adapter.onShowWebView = { [weak self] url in
+            self?.viewModel?.openWebView(url: url)
         }
     }
 }

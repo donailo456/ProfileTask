@@ -50,7 +50,6 @@ final class MainCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupContentView()
         setupViews()
-       
     }
     
     @available(*, unavailable)

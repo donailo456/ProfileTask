@@ -13,5 +13,6 @@ protocol CoordinatorProtocol {
     var children: [CoordinatorProtocol] { get set }
     var navigationController: UINavigationController { get set }
     
-    func start()
+    func startMainVC()
+    func startWebVC(url: URL)
 }

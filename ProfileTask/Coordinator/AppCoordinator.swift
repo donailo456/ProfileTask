@@ -9,6 +9,8 @@ import UIKit
 
 final class AppCoordinator: CoordinatorProtocol {
     
+    // MARK: - Internal properties
+    
     var parentCoordinator: CoordinatorProtocol?
     var children: [CoordinatorProtocol] = []
     var navigationController: UINavigationController
@@ -17,9 +19,17 @@ final class AppCoordinator: CoordinatorProtocol {
         self.navigationController = navigationController
     }
     
-    func start() {
+    // MARK: - Internal Methods
+    
+    func startMainVC() {
         showMainVC()
     }
+    
+    func startWebVC(url: URL) {
+        showWebVC(url: url)
+    }
+    
+    // MARK: - Private Methods
     
     private func showMainVC() {
         let mainViewController = MainViewController()
@@ -32,6 +42,14 @@ final class AppCoordinator: CoordinatorProtocol {
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.barTintColor = UIColor.hexStringToUIColor(hex: "141414")
         navigationController.pushViewController(mainViewController, animated: true)
+    }
+    
+    private func showWebVC(url: URL) {
+        let webViewController = WebViewController(url: url)
+
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.barTintColor = UIColor.hexStringToUIColor(hex: "141414")
+        navigationController.present(webViewController, animated: true)
     }
     
 }

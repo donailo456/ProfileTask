@@ -23,6 +23,7 @@
 		E47D5F0A2BB5D37500778085 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F092BB5D37500778085 /* Extension.swift */; };
 		E47D5F0D2BB5D7D400778085 /* MainViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F0C2BB5D7D400778085 /* MainViewModelProtocol.swift */; };
 		E47D5F0F2BB69F9A00778085 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F0E2BB69F9A00778085 /* FilesManager.swift */; };
+		E47D5F172BB75A4E00778085 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D5F162BB75A4E00778085 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E47D5F092BB5D37500778085 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E47D5F0C2BB5D7D400778085 /* MainViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelProtocol.swift; sourceTree = "<group>"; };
 		E47D5F0E2BB69F9A00778085 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
+		E47D5F162BB75A4E00778085 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E47D5F052BB5ACC700778085 /* CollectionModel */,
 				E47D5F082BB5AD5900778085 /* CollectionViewCell */,
 				E47D5EFF2BB5AC6900778085 /* ViewController */,
+				E47D5F182BB767FF00778085 /* WebView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,14 @@
 			path = FileManager;
 			sourceTree = "<group>";
 		};
+		E47D5F182BB767FF00778085 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E47D5F162BB75A4E00778085 /* WebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,6 +295,7 @@
 				E47D5EF02BB59F6D00778085 /* CoordinatorProtocol.swift in Sources */,
 				E47D5F0F2BB69F9A00778085 /* FilesManager.swift in Sources */,
 				E47D5EF82BB5A24D00778085 /* NetworkService.swift in Sources */,
+				E47D5F172BB75A4E00778085 /* WebViewController.swift in Sources */,
 				E47D5EF22BB59F9200778085 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

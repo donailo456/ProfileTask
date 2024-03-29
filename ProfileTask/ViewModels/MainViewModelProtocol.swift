@@ -10,4 +10,5 @@ import Foundation
 protocol MainViewModelProtocol {
     func getServices()
     func paginationData(limit: Int)
+    func openWebView(url: URL?)
 }

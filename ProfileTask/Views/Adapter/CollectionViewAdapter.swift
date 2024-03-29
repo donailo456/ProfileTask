@@ -29,6 +29,7 @@ final class CollectionViewAdapter: NSObject {
     // MARK: - Internal properties
     
     var onPageData: ((Int) -> Void)?
+    var onShowWebView: ((URL) -> Void)?
     
     // MARK: - Private properties
     
@@ -106,7 +107,7 @@ extension CollectionViewAdapter: UICollectionViewDelegateFlowLayout {
         if let cell = collectionView.cellForItem(at: indexPath) as? MainCollectionViewCell,
            let urlString = cell.urlString,
            let url = URL(string: urlString) {
-            UIApplication.shared.open(url)
+            onShowWebView?(url)
         }
     }
     

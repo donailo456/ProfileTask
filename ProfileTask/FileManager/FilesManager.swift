@@ -9,15 +9,21 @@ import Foundation
 
 final class FilesManager {
     
+    // MARK: - Constants
+    
     private enum Error: Swift.Error {
         case fileAlreadyExists
         case invalidDirectory
         case writtingFailed
     }
     
+    // MARK: - Internal properties
+    
     static let shared = FilesManager()
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
+    
+    // MARK: - Internal Methods
     
     func createFile(_ data: [Service]?) {
         guard FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first != nil else {
@@ -52,11 +58,10 @@ final class FilesManager {
             dataSource.forEach{ item in
                 service?.append(item)
             }
-            
+
             complition(service)
         } catch {
             print("Failed to read file: \(error.localizedDescription)")
         }
-        
     }
 }
